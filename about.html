@@ -44,8 +44,13 @@
     <p>Here’s to many more years of Indian Football. From grassroots to glory, Maidaan Master is here to represent the beautiful game. One league at a time.</p>
   </section>
 
-  <footer>
-    <p>© 2025 Maidaan Master. All Rights Reserved.</p>
-  </footer>
+<div id="footer"></div>
+<script>
+  fetch("footer.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("footer").innerHTML = data;
+    });
+</script>
 </body>
 </html>
