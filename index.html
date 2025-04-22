@@ -13,12 +13,34 @@
         <li><a href="#">What is Maidaan Master</a></li>
         <li><a href="#">What We Are Working On</a></li>
         <li>
-          <select id="leagues-dropdown" onchange="location = this.value;">
-            <option value="#">Select League</option>
-            <option value="isl.html">ISL</option>
-            <option value="i-league.html">I-League</option>
-            <option value="rfdl.html">RFDL</option>
+          <select onchange="location = this.value;">
+            <option selected disabled>Select a League</option>
+          
+            <optgroup label="National Leagues">
+              <option value="isl.html">ISL</option>
+              <option value="i-league.html">I-League</option>
+              <option value="i-league-2.html">I-League 2</option>
+              <option value="i-league-3.html">I-League 3</option>
+            </optgroup>
+          
+            <optgroup label="Youth Leagues">
+              <option value="aiff-u17.html">AIFF U17</option>
+              <option value="aiff-u15.html">AIFF U15</option>
+              <option value="aiff-u13.html">AIFF U13</option>
+              <option value="rfdl.html">RFDL</option>
+            </optgroup>
+          
+            <optgroup label="Womens Leagues">
+              <option value="iwl.html">IWL</option>
+              <option value="iwl-2.html">IWL 2</option>
+            </optgroup>
+          
+            <optgroup label="Maharashtra Leagues">
+              <option value="mumbai.html">Mumbai</option>
+              <option value="thane.html">Thane</option>
+            </optgroup>
           </select>
+
         </li>
       </ul>
     </nav>
