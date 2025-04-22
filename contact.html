@@ -7,41 +7,15 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <nav>
-      <ul class="main-menu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="contact.html">Contact Us</a></li>
-        <li><a href="future.html">Future Plans</a></li>
-        <li>
-          <select onchange="location = this.value;">
-            <option disabled selected>Select League</option>
-            <optgroup label="National Leagues">
-              <option value="isl.html">ISL</option>
-              <option value="ileague.html">I-League</option>
-              <option value="ileague2.html">I-League 2</option>
-              <option value="ileague3.html">I-League 3</option>
-            </optgroup>
-            <optgroup label="Youth Leagues">
-              <option value="u17.html">AIFF U17</option>
-              <option value="u15.html">AIFF U15</option>
-              <option value="u13.html">AIFF U13</option>
-              <option value="rfdl.html">RFDL</option>
-            </optgroup>
-            <optgroup label="Women's Leagues">
-              <option value="iwl.html">IWL</option>
-              <option value="iwl2.html">IWL 2</option>
-            </optgroup>
-            <optgroup label="Maharashtra Leagues">
-              <option value="mumbai.html">Mumbai</option>
-              <option value="thane.html">Thane</option>
-            </optgroup>
-          </select>
-        </li>
-      </ul>
-    </nav>
-  </header>
+  <div id="header"></div>
+<script>
+  fetch("header.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("header").innerHTML = data;
+    });
+</script>
+
 
   <section id="contact">
     <h1>Contact Us</h1>
