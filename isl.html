@@ -4,53 +4,24 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Indian Super League | Maidaan Master</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
-      padding: 20px;
-    }
-    h1 {
-      color: #1a1a1a;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      background: #fff;
-      margin-top: 20px;
-    }
-    th, td {
-      border: 1px solid #ddd;
-      text-align: center;
-      padding: 8px;
-    }
-    th {
-      background-color: #f0f0f0;
-    }
-    .bold {
-      font-weight: bold;
-    }
-    .footer {
-      margin-top: 20px;
-      font-size: 16px;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
   <h1>Indian Super League 2024-25</h1>
 
-  <table>
+  <table id="islTable">
     <thead>
       <tr>
-        <th>Rank</th>
-        <th>Club</th>
-        <th>MP</th>
-        <th>W</th>
-        <th>D</th>
-        <th>L</th>
-        <th>GD</th>
-        <th>Pts</th>
+        <th onclick="sortTable(0)">Rank</th>
+        <th class="club">Club</th>
+        <th onclick="sortTable(2)">MP</th>
+        <th onclick="sortTable(3)">W</th>
+        <th onclick="sortTable(4)">D</th>
+        <th onclick="sortTable(5)">L</th>
+        <th onclick="sortTable(6)">GD</th>
+        <th onclick="sortTable(7)">Pts</th>
       </tr>
     </thead>
     <tbody>
@@ -74,6 +45,47 @@
     <p><strong>Promotion:</strong> Champions qualify for AFC tournament</p>
     <p><strong>Relegation:</strong> No relegation as of now</p>
   </div>
+
+  <script>
+    function sortTable(n) {
+      const table = document.getElementById("islTable");
+      let rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+      switching = true;
+      dir = "desc";
+
+      while (switching) {
+        switching = false;
+        rows = table.rows;
+
+        for (i = 1; i < (rows.length - 1); i++) {
+          shouldSwitch = false;
+          x = rows[i].getElementsByTagName("TD")[n];
+          y = rows[i + 1].getElementsByTagName("TD")[n];
+          if (dir === "asc") {
+            if (Number(x.innerText) > Number(y.innerText)) {
+              shouldSwitch = true;
+              break;
+            }
+          } else if (dir === "desc") {
+            if (Number(x.innerText) < Number(y.innerText)) {
+              shouldSwitch = true;
+              break;
+            }
+          }
+        }
+        if (shouldSwitch) {
+          rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+          switching = true;
+          switchcount++;
+        } else {
+          if (switchcount === 0 && dir === "desc") {
+            dir = "asc";
+            switching = true;
+          }
+        }
+      }
+    }
+  </script>
 
 </body>
 </html>
