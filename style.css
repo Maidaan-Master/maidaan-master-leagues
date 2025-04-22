@@ -11,7 +11,7 @@ body {
   color: #FFFFFF;
   font-family: Arial, sans-serif;
 
-  /* New vertical layout styles */
+  /* Vertical layout styles */
   max-width: 480px;
   margin: 0 auto;
   padding: 20px;
@@ -27,29 +27,44 @@ header {
   width: 100%;
 }
 
-nav ul {
+/* Main menu layout */
+nav ul.main-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 10px 0;
   list-style: none;
   text-align: center;
 }
 
-nav ul li {
-  display: inline-block;
-  margin: 0 20px;
+/* Menu items */
+nav ul.main-menu li {
+  list-style: none;
 }
 
-nav ul li a {
+/* Menu links */
+nav ul.main-menu li a {
   color: #FFFFFF;
   text-decoration: none;
   font-size: 16px;
   font-weight: bold;
+  transition: color 0.3s ease;
 }
 
+nav ul.main-menu li a:hover {
+  color: #FFCC00;
+}
+
+/* Dropdown */
 nav select {
-  padding: 5px 15px;
+  padding: 8px 12px;
   background-color: #222222;
   color: #FFFFFF;
   border: none;
   font-size: 16px;
+  border-radius: 5px;
   cursor: pointer;
 }
 
