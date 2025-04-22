@@ -1,9 +1,36 @@
-<html>
-  <head>
-    <title>Maidaan Master Leagues</title>
-  </head>
-  <body>
-    <h1>Welcome to Maidaan Master Leagues!</h1>
-    <p>This is the home page for your football leagues website.</p>
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maidaan Master Leagues</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#">What is Maidaan Master</a></li>
+        <li><a href="#">What We Are Working On</a></li>
+        <li>
+          <select id="leagues-dropdown" onchange="location = this.value;">
+            <option value="#">Select League</option>
+            <option value="isl.html">ISL</option>
+            <option value="i-league.html">I-League</option>
+            <option value="rfdl.html">RFDL</option>
+          </select>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="intro">
+    <h1>Welcome to Maidaan Master</h1>
+    <p>Your go-to destination for Indian football league standings, updates, and more.</p>
+  </section>
+  
+  <footer>
+    <p>© 2025 Maidaan Master. All Rights Reserved.</p>
+  </footer>
+</body>
 </html>
