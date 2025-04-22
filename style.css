@@ -10,12 +10,21 @@ body {
   background-color: #000000;
   color: #FFFFFF;
   font-family: Arial, sans-serif;
+
+  /* New vertical layout styles */
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Header Navigation */
 header {
   background-color: #111111;
   padding: 15px 0;
+  width: 100%;
 }
 
 nav ul {
@@ -52,7 +61,8 @@ nav select option {
 /* Intro Section */
 #intro {
   text-align: center;
-  padding: 50px;
+  padding: 50px 20px;
+  width: 100%;
 }
 
 #intro h1 {
@@ -77,8 +87,8 @@ footer {
 
 /* Tables for League Pages */
 table {
-  width: 80%;
-  margin: 20px auto;
+  width: 100%;
+  margin: 20px 0;
   border-collapse: collapse;
   border: 1px solid #FFFFFF;
 }
@@ -91,4 +101,11 @@ table th, table td {
 
 table th {
   background-color: #333333;
+}
+
+/* Responsive padding for smaller screens */
+@media screen and (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
 }
